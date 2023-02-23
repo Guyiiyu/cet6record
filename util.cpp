@@ -17,9 +17,9 @@ int read_file(const char *filename){
     if(!(file = fopen(filename, "r"))){
         perror("open file for reading faild");
     }
-    string word; word.resize(30);
+    char word[30];
     int cnt;
-    while(fscanf(file, "%s%d", &word[0], &cnt) == 2){
+    while(fscanf(file, "%s%d", word, &cnt) == 2){
         word_count[word] += cnt;
     }
     fclose(file);

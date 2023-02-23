@@ -22,8 +22,10 @@ int main(){
     string input;
     while(input != "exit"){
         cin >> input;
+        for(auto &ch:input) if(ch >= 'A' && ch <= 'Z') ch += 'a' - 'A';
         if(input == "exit") break;
         if(check_word(input)){
+
             word_count[input]++;
             printf("word \"%s\" added!\n", input.c_str());
         }
